@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "696614634324",
+    "project_id": "green-calendar-1",
+    "storage_bucket": "green-calendar-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696614634324:android:63f6d56cf807770be0bec1",
+        "android_client_info": {
+          "package_name": "com.example.greencalendar10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696614634324-vttt0ou1f7n5krc80h9bldru19729uoj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.greencalendar10",
+            "certificate_hash": "8efdb309935570768de6fad81fcf586bcff45f42"
+          }
+        },
+        {
+          "client_id": "696614634324-jngmg42t01tict7klu674c50kfp9kvgb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCocZOB64-po8zSkY13g6X3Hpel5hvpjmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696614634324-jngmg42t01tict7klu674c50kfp9kvgb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
