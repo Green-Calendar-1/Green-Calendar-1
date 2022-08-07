@@ -7,5 +7,7 @@ class ProfileSettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_setting)
+
+        // 안영준 커밋 확인
     }
 }
