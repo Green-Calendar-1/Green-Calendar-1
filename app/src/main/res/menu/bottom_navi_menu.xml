@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeMenu"
+        android:title="홈"
+        android:icon="@drawable/home_ic"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/categoryMenu"
+        android:title="카테고리"
+        android:icon="@drawable/category_ic" />
+    <item
+        android:id="@+id/myDiaryMenu"
+        android:title="나의 일기"
+        android:icon="@drawable/my_diary_ic" />
+    <item
+        android:id="@+id/myPageMenu"
+        android:title="마이 페이지"
+        android:icon="@drawable/my_page_ic" />
+
+</menu>

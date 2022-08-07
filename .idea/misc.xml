@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_login.xml" value="0.359375" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/menu/bottom_navi_menu.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_profile_setting.xml" value="0.21784420289855072" />
       </map>
