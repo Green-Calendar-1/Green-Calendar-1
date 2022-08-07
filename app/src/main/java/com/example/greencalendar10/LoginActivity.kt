@@ -106,6 +106,12 @@ class LoginActivity : AppCompatActivity() {
             requestLauncher.launch(signInIntent)
         }
 
+        // 메인 화면 연결
+        binding.homePageBtn.setOnClickListener{
+            val intentToMain = Intent(this, MainActivity::class.java)
+            startActivity(intentToMain)
+        }
+
 
 
         //-----------------네이버 로그인--------------------
