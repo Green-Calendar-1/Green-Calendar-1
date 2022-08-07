@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_login.xml" value="0.359375" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_main.xml" value="0.22962962962962963" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_profile_setting.xml" value="0.22135416666666666" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/fragment_category.xml" value="0.24635416666666668" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/fragment_my_diary.xml" value="0.24153846153846154" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/fragment_my_page.xml" value="0.24153846153846154" />
         <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/menu/bottom_navi_menu.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_profile_setting.xml" value="0.21784420289855072" />
