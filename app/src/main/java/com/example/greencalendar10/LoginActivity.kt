@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
         binding=ActivityLoginBinding.inflate(layoutInflater)
         auth = Firebase.auth
 
-        var intent = Intent(this, ProfileSettingActivity::class.java)
+        var intent = Intent(this, MainActivity::class.java)
 
         setContentView(binding.root)
 
