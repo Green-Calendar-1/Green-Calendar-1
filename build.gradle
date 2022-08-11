@@ -21,3 +21,5 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//export JAVA_HOME=/usr/lib/jvm/default-java
