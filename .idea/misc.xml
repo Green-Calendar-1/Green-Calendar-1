@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/drawable/comment_layout_background.xml" value="0.2725" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_board_write.xml" value="0.359375" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_comment_list.xml" value="0.1" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_login.xml" value="0.359375" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_main.xml" value="0.359375" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/activity_profile_setting.xml" value="0.359375" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/comment_lv_item.xml" value="0.3333333333333333" />
+        <entry key="..\:/Code/Green-Calendar-1/app/src/main/res/layout/fragment_home.xml" value="0.359375" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/drawable-v24/category_ic.xml" value="0.1235" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/drawable-v24/home_ic.xml" value="0.1235" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1235" />
