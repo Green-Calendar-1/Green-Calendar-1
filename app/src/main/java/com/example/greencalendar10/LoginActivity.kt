@@ -118,6 +118,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intentToCommentList)
         }
 
+        // 알림창 화면 연결
+        binding.notificationListPageBtn.setOnClickListener{
+            val intentToNotificationList = Intent(this, NotificationList::class.java)
+            startActivity(intentToNotificationList)
+        }
+
 
 
         //-----------------네이버 로그인--------------------
