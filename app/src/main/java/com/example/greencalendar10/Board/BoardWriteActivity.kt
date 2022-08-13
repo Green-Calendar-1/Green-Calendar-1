@@ -27,7 +27,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
             Log.d(TAG, title)
             Log.d(TAG, content)
-
+        //확인
         }
     }
 
