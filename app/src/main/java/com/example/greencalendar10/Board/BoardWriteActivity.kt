@@ -27,8 +27,11 @@ class BoardWriteActivity : AppCompatActivity() {
 
             Log.d(TAG, title)
             Log.d(TAG, content)
-        //확인
+
         }
     }
 
 }
+
+
+//8/13 깃 확인
