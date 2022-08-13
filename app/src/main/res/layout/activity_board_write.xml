@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <layout>
 
+
     <LinearLayout
+        android:id="@+id/writePage"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -72,7 +75,7 @@
 
         <!--게시물 추가 버튼-->
         <Button
-            android:id="@+id/writeBtn"
+            android:id="@+id/addBtn"
             android:text="추가"
             android:textSize="18sp"
             android:layout_width="match_parent"
@@ -86,5 +89,5 @@
     </LinearLayout>
 </layout>
 
-<!--임시로 해놨어요... 디자인 수정 예정1-->
-<!--세영 업로드3-->
+    <!--임시로 해놨어요... 디자인 수정 예정1-->
+    <!--세영 업로드3-->
