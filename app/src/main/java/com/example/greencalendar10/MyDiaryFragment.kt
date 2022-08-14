@@ -7,3 +7,4 @@ class MyDiaryFragment: Fragment(R.layout.fragment_my_diary) {
 }
 
 //8/14
+//2222
