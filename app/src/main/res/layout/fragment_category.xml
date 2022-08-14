@@ -33,7 +33,7 @@
 
             <!--글 추가버튼-->
             <ImageView
-                android:id="@+id/writeBtn"
+                android:id="@+id/addBtn"
                 android:src="@drawable/add_circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

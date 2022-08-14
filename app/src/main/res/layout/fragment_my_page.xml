@@ -1,30 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MyPageFragment">
 
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="마이 페이지" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        tools:context=".MyPageFragment">
 
 
-        <!--하단 바 버튼 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="마이 페이지" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="300dp"
+            android:text="로그아웃" />
+
+        <TextView
+            android:id="@+id/nicknameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="100dp"
+            android:text="닉네임"
+            android:textSize="50dp" />
+
+
+
+    <!--하단 바 버튼 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,7 +63,6 @@
                     android:layout_weight="1"
                     android:src="@drawable/bottom_home"
                     tools:ignore="MissingConstraints" />
-
 
                 <ImageView
                     android:id="@+id/categoryTap"
@@ -65,13 +87,10 @@
                     android:layout_weight="1"
                     android:src="@drawable/bottom_mypage"
                     tools:ignore="MissingConstraints" />
-
             </LinearLayout>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
 
 
-</FrameLayout>
+        </FrameLayout>
+
 </layout>

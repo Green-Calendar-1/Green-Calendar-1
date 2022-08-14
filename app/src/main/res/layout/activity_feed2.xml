@@ -42,7 +42,7 @@
 
     <!--글 추가 할 버튼-->
     <Button
-        android:id="@+id/writeBtn"
+        android:id="@+id/addBtn"
         android:layout_width="85dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"

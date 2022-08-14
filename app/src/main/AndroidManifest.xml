@@ -35,10 +35,16 @@
             android:name=".CatagoryChoose"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".NotificationList"
+            android:exported="false" />
+        <activity
+            android:name=".CommentList"
             android:exported="false" />
         <activity
             android:name=".ProfileSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
