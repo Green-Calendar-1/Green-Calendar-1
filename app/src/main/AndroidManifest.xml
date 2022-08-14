@@ -19,9 +19,6 @@
             android:name=".NotificationList"
             android:exported="false" />
         <activity
-            android:name=".CommentList"
-            android:exported="false" />
-        <activity
             android:name=".ProfileSettingActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"/>

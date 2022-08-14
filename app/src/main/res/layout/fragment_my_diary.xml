@@ -11,4 +11,12 @@
         android:layout_height="match_parent"
         android:text="나의 일기 페이지" />
 
+    <!--    댓글 fragment 연결 버튼-->
+    <Button
+        android:id="@+id/commentListFragBtn"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="댓글창" />
+
 </FrameLayout>
