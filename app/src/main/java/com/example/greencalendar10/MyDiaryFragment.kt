@@ -31,3 +31,6 @@ class MyDiaryFragment: Fragment(){
     }
 
 }
+
+//8/14
+//2222
