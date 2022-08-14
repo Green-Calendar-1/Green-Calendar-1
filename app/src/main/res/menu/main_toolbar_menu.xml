@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 아이콘 추후 변경해야함 -->
+    <item
+        android:id="@+id/action_notification"
+        android:title="알림"
+        android:icon="@drawable/home_ic"
+        app:showAsAction="always" />
+
+
+</menu>

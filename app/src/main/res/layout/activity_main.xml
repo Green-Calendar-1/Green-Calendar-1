@@ -6,15 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#747CAE43"/>
+
     <FrameLayout
         android:id="@+id/flFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+
+        app:layout_constraintHorizontal_bias="0.5">
 
         <!-- 하단 네비게이션 버튼이 눌릴 때마다 해당 fragment가 보여짐 -->
         <!-- defaultNavHost=true는 activitiy에서의 뒤로 가기 버튼이 우리가 구현한 navigation에 맞게 동작 -->
@@ -24,8 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/bottom_nav_graph"
-            />
+            app:navGraph="@navigation/bottom_nav_graph" />
 
     </FrameLayout>
 
