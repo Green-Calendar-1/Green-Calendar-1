@@ -112,11 +112,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intentToMain)
         }
 
-        // 댓글창 화면 연결
-        binding.commentListPageBtn.setOnClickListener{
-            val intentToCommentList = Intent(this, CommentList::class.java)
-            startActivity(intentToCommentList)
-        }
 
         // 알림창 화면 연결
         binding.notificationListPageBtn.setOnClickListener{
