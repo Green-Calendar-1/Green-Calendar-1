@@ -80,7 +80,6 @@ class AddActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    //....................
     private fun saveStore(){
         //add............................
         val data = mapOf(
