@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.greencalendar10.MyApplication.Companion.auth
 import com.example.greencalendar10.databinding.ActivityAddBinding
+import com.example.greencalendar10.util.dateToString
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -30,36 +31,74 @@ class AddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddBinding.inflate(layoutInflater)
+        binding= ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.saveBtn.setOnClickListener {
-            saveStore()
-            val intent = Intent(this,BoardActivity::class.java)
-            startActivity(intent)
+    }
+
+    val requestLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult())
+    {
+        if(it.resultCode === android.app.Activity.RESULT_OK){
+            Glide
+                .with(getApplicationContext())
+                .load(it.data?.data)
+                .apply(RequestOptions().override(250, 200))
+                .centerCrop()
+                .into(binding.addImageView)
+
+
+            val cursor = contentResolver.query(it.data?.data as Uri,
+                arrayOf<String>(MediaStore.Images.Media.DATA), null, null, null);
+            cursor?.moveToFirst().let {
+                filePath=cursor?.getString(0) as String
+            }
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_add, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId === R.id.menu_add_gallery){
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.setDataAndType(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                "image/*"
+            )
+            requestLauncher.launch(intent)
+        }else if(item.itemId === R.id.menu_add_save){
+            if(binding.addImageView.drawable !== null && binding.addEditView.text.isNotEmpty()){
+                //store 에 먼저 데이터를 저장후 document id 값으로 업로드 파일 이름 지정
+                saveStore()
+            }else {
+                Toast.makeText(this, "데이터가 모두 입력되지 않았습니다.", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    //....................
     private fun saveStore(){
-        val writing = mapOf(
+        //add............................
+        val data = mapOf(
             "email" to MyApplication.email,
-            "content" to binding.contentEt.text.toString(),
+            "content" to binding.addEditView.text.toString(),
             "date" to dateToString(Date())
         )
 
-
-        MyApplication.db.collection("writings")
-            .add(writing)
+        MyApplication.db.collection("news")
+            .add(data)
             .addOnSuccessListener {
                 uploadImage(it.id)
             }
-            .addOnFailureListener {
-                Log.d("ahn","사진 업로드 실패")
+            .addOnFailureListener{
+                Log.d("ahn", "data save error", it)
             }
 
     }
-
     private fun uploadImage(docId: String){
         //add............................
         val storage = MyApplication.storage
@@ -75,10 +114,7 @@ class AddActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Log.d("ahn", "file save error", it)
             }
-    }
-    fun dateToString(date: Date): String {
-        val format = SimpleDateFormat("yyyy-MM-dd")
-        return format.format(date)
+
     }
 
 }
