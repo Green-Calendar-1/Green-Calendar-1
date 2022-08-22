@@ -77,7 +77,7 @@ class BoardActivity : AppCompatActivity() {
                 binding.mainRecyclerView.adapter = MyAdapter(this, itemList)
             }
             .addOnFailureListener{exception ->
-                Log.d("kkang", "error.. getting document..", exception)
+                Log.d("ahn", "error.. getting document..", exception)
                 Toast.makeText(this, "서버 데이터 획득 실패", Toast.LENGTH_SHORT).show()
             }
     }

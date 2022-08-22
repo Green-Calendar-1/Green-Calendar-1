@@ -33,7 +33,6 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     val requestLauncher = registerForActivityResult(
@@ -85,7 +84,7 @@ class AddActivity : AppCompatActivity() {
         val data = mapOf(
             "email" to MyApplication.email,
             "content" to binding.addEditView.text.toString(),
-            "date" to dateToString(Date())
+            "date" to dateToString(Date())  // util 부분
         )
 
         MyApplication.db.collection("news")
@@ -113,7 +112,5 @@ class AddActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Log.d("ahn", "file save error", it)
             }
-
     }
-
 }

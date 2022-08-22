@@ -26,11 +26,6 @@ class MyDiaryFragment: Fragment(){
         btnCommentListFragment.setOnClickListener{
             mActivity.changeFragment(1)
         }
-
         return binding.root
     }
-
 }
-
-//8/14
-//2222
