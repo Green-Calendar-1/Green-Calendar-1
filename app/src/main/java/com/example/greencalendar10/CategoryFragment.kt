@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
+import com.example.greencalendar10.CategotyFeed.*
 import com.example.greencalendar10.databinding.FragmentCategoryBinding
 
-
 class CategoryFragment: Fragment() {
-    // 이 페이지에서 오류 확인 바람
+
     private lateinit var binding : FragmentCategoryBinding
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class CategoryFragment: Fragment() {
 
         //binding.DataBindingUtil.inflate(inflater,R.layout.fragment_category,container,false)
 
-        /*binding.addBtn.setOnClickListener {
+        binding.addBtn.setOnClickListener {
             val intent = Intent(context, BoardWriteActivity::class.java) //boardwrite로 이동
             startActivity(intent)
         }
@@ -54,7 +54,9 @@ class CategoryFragment: Fragment() {
         binding.categoryBtn6.setOnClickListener {
             val intent = Intent(context, Feed6Activity::class.java)
             startActivity(intent)
-        }*/
+        }
+
+
 
         return binding.root
     }

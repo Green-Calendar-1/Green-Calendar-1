@@ -6,17 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".CategoryFragment">
 
-    <!-- toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/main_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#747CAE43"/>
 
-    <TextView
+
+   <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="친구들의 일기를 확인해 보세요"
@@ -24,29 +16,34 @@
 
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
-
-    <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-
-
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintTop_toBottomOf="@id/main_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.5">
-
+        tools:ignore="MissingConstraints" />-->
 
 
         <!--카테고리 선택 버튼들-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginBottom="50dp">
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical">
+
+            <!-- toolbar -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/main_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="#747CAE43"/>
+
+            <!--글 추가 버튼 -->
+
+            <ImageView
+                android:id="@+id/contentaddBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="320dp"
+                android:src="@drawable/add_writing" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +62,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/add_circle"/>
+                    android:src="@drawable/add_circle" />
             </LinearLayout>
 
             <LinearLayout
@@ -78,14 +75,14 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/add_circle"/>
+                    android:src="@drawable/add_circle" />
 
                 <ImageView
                     android:id="@+id/categoryBtn4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/add_circle"/>
+                    android:src="@drawable/add_circle" />
             </LinearLayout>
 
             <LinearLayout
@@ -98,44 +95,18 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/add_circle"/>
+                    android:src="@drawable/add_circle" />
 
                 <ImageView
                     android:id="@+id/categoryBtn6"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/add_circle"/>
+                    android:src="@drawable/add_circle" />
             </LinearLayout>
 
 
-            <!--글 추가 버튼 -->
-            <ImageView
-                android:id="@+id/addBtn"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/add_writing" />
 
         </LinearLayout>
-    </FrameLayout>
-
-
-
-
-
-    <!-- 하단 네비게이션 바 생성 -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        app:menu="@menu/bottom_navi_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:labelVisibilityMode="labeled"
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
