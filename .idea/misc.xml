@@ -3,13 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/activity_board_write.xml" value="0.25" />
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/activity_feed1.xml" value="0.25" />
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/activity_feed6.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/comment_lv_item.xml" value="0.25" />
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/fragment_category.xml" value="0.25" />
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/fragment_comment_list.xml" value="0.25" />
-        <entry key="..\:/Users/201915044/Green-Calendar-1/app/src/main/res/layout/fragment_my_diary.xml" value="0.25" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/drawable-v24/category_ic.xml" value="0.1235" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/drawable-v24/home_ic.xml" value="0.1235" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1235" />
@@ -22,6 +15,12 @@
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_board.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_board_write.xml" value="0.20437956204379562" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_comment_list.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_feed1.xml" value="0.1125" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_feed2.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_feed3.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_feed4.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_feed5.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_feed6.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/activity_notification_list.xml" value="0.25364583333333335" />
@@ -31,14 +30,16 @@
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/fragment_comment_list.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/fragment_my_diary.xml" value="0.2" />
-        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/fragment_my_page.xml" value="0.264" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/fragment_my_page.xml" value="0.256140350877193" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/item_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/layout/notification_lv_item.xml" value="0.4" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/menu/bottom_navi_menu.xml" value="0.1125" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/menu/main_toolbar_menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/menu/menu_add.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/menu/menu_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/ahn/AndroidStudioProjects/GreenCalendar10/app/src/main/res/xml/file_path.xml" value="0.2526041666666667" />
       </map>
     </option>
   </component>

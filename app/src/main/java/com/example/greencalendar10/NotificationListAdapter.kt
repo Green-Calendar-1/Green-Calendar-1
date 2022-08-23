@@ -36,6 +36,4 @@ class NotificationListAdapter(val context: Context, val notificationList: ArrayL
     override fun getCount(): Int {
         return notificationList.size
     }
-
-
 }

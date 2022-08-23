@@ -34,23 +34,24 @@ class AddActivity : AppCompatActivity() {
         binding= ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
+    // 갤러리 앱에서 사진 데이터 가져오기
     val requestLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult())
     {
         if(it.resultCode === android.app.Activity.RESULT_OK){
             Glide
                 .with(getApplicationContext())
-                .load(it.data?.data)
+                .load(it.data?.data)    // 리소스 전달
                 .apply(RequestOptions().override(250, 200))
                 .centerCrop()
-                .into(binding.addImageView)
+                .into(binding.addImageView) // addImageView로 전달
 
-
+            // filePath를 가져오는 코드다.
             val cursor = contentResolver.query(it.data?.data as Uri,
                 arrayOf<String>(MediaStore.Images.Media.DATA), null, null, null);
             cursor?.moveToFirst().let {
                 filePath=cursor?.getString(0) as String
+                Log.d("ahn filePath","$filePath")
             }
         }
     }
@@ -86,7 +87,6 @@ class AddActivity : AppCompatActivity() {
             "content" to binding.addEditView.text.toString(),
             "date" to dateToString(Date())  // util 부분
         )
-
         MyApplication.db.collection("news")
             .add(data)
             .addOnSuccessListener {
@@ -95,7 +95,6 @@ class AddActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Log.d("ahn", "data save error", it)
             }
-
     }
     private fun uploadImage(docId: String){
         //add............................

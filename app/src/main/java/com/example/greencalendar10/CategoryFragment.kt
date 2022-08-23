@@ -21,10 +21,10 @@ class CategoryFragment: Fragment() {
 
         //binding.DataBindingUtil.inflate(inflater,R.layout.fragment_category,container,false)
 
-        binding.addBtn.setOnClickListener {
+        /*binding.addBtn.setOnClickListener {
             val intent = Intent(context, BoardWriteActivity::class.java) //boardwrite로 이동
             startActivity(intent)
-        }
+        }*/
 
         //피드(1~버튼 개수만큼)
         binding.categoryBtn1.setOnClickListener {
