@@ -26,15 +26,7 @@
             android:layout_marginBottom="50dp"
             android:orientation="vertical">
 
-            <!-- toolbar -->
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/main_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="#747CAE43"/>
+            <!-- 툴바 여기에도 두면 중복돼서 지웠습니다 -->
 
             <!--글 추가 버튼 -->
 

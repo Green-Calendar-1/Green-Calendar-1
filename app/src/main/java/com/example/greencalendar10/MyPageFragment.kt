@@ -80,6 +80,7 @@ class MyPageFragment: Fragment(R.layout.fragment_my_page) {
         }
 
 
+
     }
 
 }

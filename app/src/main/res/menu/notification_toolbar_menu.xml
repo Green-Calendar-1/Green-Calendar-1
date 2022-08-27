@@ -3,10 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_notification"
-        android:title="알림"
-        android:icon="@drawable/notifications_ic"
+        android:id="@+id/action_back"
+        android:title="뒤로가기"
+        android:icon="@drawable/back_ic"
         app:showAsAction="always" />
-
 
 </menu>
