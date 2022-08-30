@@ -130,7 +130,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-
+        /*
         //-----------------네이버 로그인--------------------
         // 네이버 초기화
         val naverClientId = getString(R.string.social_login_info_naver_client_id)
@@ -185,9 +185,9 @@ class LoginActivity : AppCompatActivity() {
             override fun onError(errorCode: Int, message: String) {
                 onFailure(errorCode, message)
             }
-        }
+        }*/
 
-        NaverIdLoginSDK.authenticate(this, oauthLoginCallback)
+        //NaverIdLoginSDK.authenticate(this, oauthLoginCallback)
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.greencalendar10
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.greencalendar10.databinding.ActivityProfileSettingBinding
+import com.example.greencalendar10.util.myCheckPermission
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,6 +31,8 @@ class ProfileSettingActivity : AppCompatActivity() {
 
     lateinit var binding:ActivityProfileSettingBinding
     lateinit var filePath: String
+    lateinit var sharedPref:SharedPreferences
+    lateinit var file:Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +40,7 @@ class ProfileSettingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // 갤러리 요청 런치
-        // 갤러리 앱에서 사진 데이터 가져오기
+        // 갤러리 앱에서 사진 데이터 가져와 filePath에 경로 저장
         val requestLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult())
         {
@@ -66,7 +70,6 @@ class ProfileSettingActivity : AppCompatActivity() {
             requestLauncher.launch(intentToGallery)
         }
 
-
         val intentToMainActivity = Intent(this,MainActivity::class.java)
 
         binding.settingBtn.setOnClickListener {
@@ -76,38 +79,52 @@ class ProfileSettingActivity : AppCompatActivity() {
 
     }
     private fun saveStore(){
-
+        // 프로필 설정창에서 닉네임, 한 줄 소개 값을 받는다.
         val user = mapOf(
             "nickname" to binding.nicknameEt.text.toString(),
             "email" to MyApplication.email,
             "introduction" to binding.introductionEt.text.toString()
         )
+        // 서버에 저장
         MyApplication.db.collection("users")
+                // 유저 정보라 이메일 값으로 유저정보 저장
             .document("${MyApplication.email}")
             .set(user)
             .addOnSuccessListener {
-                Log.d("db 불러오기 성공","db 불러오기 성공")
+                Log.d("프로필 설정","서버에 유저 정보 저장 성공")
+                // 이미지도 이메일값으로 저장
                 uploadImage("${MyApplication.email}")
+
+                // 닉네임, 한 줄 소개, 이미지 filePath 값을 sharedPreference로 핸드폰 내부에 저장함
+                // -> 글쓰기 창, 댓글창, 마이페이지에서 활용
+                sharedPref = getSharedPreferences("userPref",Context.MODE_PRIVATE)
+                sharedPref.edit().run{
+                    putString("nickname",binding.nicknameEt.text.toString())
+                    putString("introduction",binding.introductionEt.text.toString())
+                    putString("filePath",filePath)
+                    commit()
+                }
             }
             .addOnFailureListener{
-                Log.d("db 실패", "db 실패")
+                Log.d("프로필 설정", "서버에 유저 정보 저장 실패")
             }
     }
-
-    private fun uploadImage(docId: String){
-        //add............................
+    // 프로필 이미지 업로드
+    private fun uploadImage(docId: String){ // 유저 정보는 docId 값을 이메일 값으로 저장했다.
         val storage = MyApplication.storage
         val storageRef = storage.reference
         val imgRef = storageRef.child("profiles/${docId}.jpg")
 
-        val file = Uri.fromFile(File(filePath))
+        file = Uri.fromFile(File(filePath))
+
+        Log.d("프로필 설정","파일 값: $file")
         imgRef.putFile(file)
             .addOnSuccessListener {
-                Toast.makeText(this, "save ok..", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "프로필 저장 완료!!", Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener{
-                Log.d("ahn", "file save error", it)
+                Log.d("프로필 설정", "프로필 사진 저장 실패")
             }
     }
 

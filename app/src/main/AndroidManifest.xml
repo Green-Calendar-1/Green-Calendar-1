@@ -36,9 +36,14 @@
             android:exported="false" />
         <activity
             android:name=".AddActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".BoardActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".BoardWriteActivity"
             android:exported="false" />
 
         <activity

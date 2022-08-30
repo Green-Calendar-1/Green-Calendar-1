@@ -1,14 +1,10 @@
 package com.example.greencalendar10.util
 
 import android.Manifest
-import android.annotation.TargetApi
-import android.app.Activity
-import android.content.Context
 import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -39,3 +35,4 @@ fun dateToString(date: Date): String {
     val format = SimpleDateFormat("MM월 dd일 HH시 mm분")
     return format.format(date)
 }
+

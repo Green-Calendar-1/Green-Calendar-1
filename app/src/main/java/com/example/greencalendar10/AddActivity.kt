@@ -1,6 +1,8 @@
 package com.example.greencalendar10
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,11 +16,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.greencalendar10.MyApplication.Companion.auth
 import com.example.greencalendar10.databinding.ActivityAddBinding
+import com.example.greencalendar10.model.Post
 import com.example.greencalendar10.util.dateToString
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import io.grpc.InternalChannelz.id
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,11 +33,14 @@ class AddActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddBinding
     lateinit var filePath: String
+    lateinit var sharedPref:SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPref = getSharedPreferences("userPref", Context.MODE_PRIVATE)
     }
     // 갤러리 앱에서 사진 데이터 가져오기
     val requestLauncher = registerForActivityResult(
@@ -83,14 +91,15 @@ class AddActivity : AppCompatActivity() {
     private fun saveStore(){
         //add............................
         val data = mapOf(
-            "email" to MyApplication.email,
+            "nickname" to sharedPref.getString("nickname","없음"),
             "content" to binding.addEditView.text.toString(),
-            "date" to dateToString(Date())  // util 부분
+            "date" to dateToString(Date()),
         )
-        MyApplication.db.collection("news")
+        MyApplication.db.collection("posts")
             .add(data)
             .addOnSuccessListener {
                 uploadImage(it.id)
+                Log.d("아이디","${it.id}")
             }
             .addOnFailureListener{
                 Log.d("ahn", "data save error", it)
@@ -103,6 +112,7 @@ class AddActivity : AppCompatActivity() {
         val imgRef = storageRef.child("images/${docId}.jpg")
 
         val file = Uri.fromFile(File(filePath))
+        Log.d("추가 화면에서 파일","$file")
         imgRef.putFile(file)
             .addOnSuccessListener {
                 Toast.makeText(this, "save ok..", Toast.LENGTH_SHORT).show()
