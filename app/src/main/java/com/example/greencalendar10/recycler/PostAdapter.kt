@@ -8,26 +8,26 @@ import com.bumptech.glide.Glide
 
 import com.example.greencalendar10.MyApplication
 import com.example.greencalendar10.databinding.ItemMainBinding
-import com.example.greencalendar10.model.ItemData
+import com.example.greencalendar10.model.Post
 
 
-class MyViewHolder(val binding: ItemMainBinding) : RecyclerView.ViewHolder(binding.root)
+class PostViewHolder(val binding: ItemMainBinding) : RecyclerView.ViewHolder(binding.root)
 
-class MyAdapter(val context: Context, val itemList: MutableList<ItemData>): RecyclerView.Adapter<MyViewHolder>() {
+class PostAdapter(val context: Context, val postList: MutableList<Post>): RecyclerView.Adapter<PostViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return MyViewHolder(ItemMainBinding.inflate(layoutInflater))
+        return PostViewHolder(ItemMainBinding.inflate(layoutInflater))
     }
 
     override fun getItemCount(): Int {
-        return itemList.size
+        return postList.size
     }
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val data = itemList.get(position)
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+        val data = postList.get(position)
 
         holder.binding.run {
-            itemEmailView.text=data.email
+            itemEmailView.text=data.nickname
             itemDateView.text=data.date
             itemContentView.text=data.content
         }

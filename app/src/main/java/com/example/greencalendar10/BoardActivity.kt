@@ -9,18 +9,11 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greencalendar10.databinding.ActivityAddBinding
 import com.example.greencalendar10.databinding.ActivityBoardBinding
-import com.example.greencalendar10.model.ItemData
-import com.example.greencalendar10.recycler.MyAdapter
+import com.example.greencalendar10.model.Post
+import com.example.greencalendar10.recycler.PostAdapter
 import com.example.greencalendar10.util.myCheckPermission
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.toObjects
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.Query
 
 class BoardActivity : AppCompatActivity() {
     lateinit var binding: ActivityBoardBinding
@@ -64,17 +57,18 @@ class BoardActivity : AppCompatActivity() {
     }
 
     private fun makeRecyclerView(){
-        MyApplication.db.collection("news")
+        MyApplication.db.collection("posts")
+            .orderBy("date", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener {result ->
-                val itemList = mutableListOf<ItemData>()
+                val itemList = mutableListOf<Post>()
                 for(document in result){
-                    val item = document.toObject(ItemData::class.java)
+                    val item = document.toObject(Post::class.java)
                     item.docId=document.id
                     itemList.add(item)
                 }
                 binding.mainRecyclerView.layoutManager = LinearLayoutManager(this)
-                binding.mainRecyclerView.adapter = MyAdapter(this, itemList)
+                binding.mainRecyclerView.adapter = PostAdapter(this,itemList)
             }
             .addOnFailureListener{exception ->
                 Log.d("ahn", "error.. getting document..", exception)

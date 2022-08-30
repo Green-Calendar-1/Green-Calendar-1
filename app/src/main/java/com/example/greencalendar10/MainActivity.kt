@@ -1,20 +1,24 @@
 package com.example.greencalendar10
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import androidx.appcompat.widget.Toolbar
+import com.bumptech.glide.Glide
 import com.example.greencalendar10.databinding.ActivityLoginBinding
 import com.example.greencalendar10.databinding.ActivityMainBinding
+import com.example.greencalendar10.model.User
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         // toolbar
         val toolbar: Toolbar = findViewById(R.id.main_toolbar)
@@ -22,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         // 하단 바 바인딩
         val bnv_main = findViewById(R.id.bottomNavigationView) as BottomNavigationView
+
 
         bnv_main.run { setOnItemSelectedListener {
             when(it.itemId) {
