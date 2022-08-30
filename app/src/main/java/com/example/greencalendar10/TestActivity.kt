@@ -8,6 +8,6 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test2)
     }
-    //test
+    //test22
 
 }
