@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 import com.example.greencalendar10.databinding.ActivityLoginBinding
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // 기존 action bar 숨기기
+        val actionBar : ActionBar?
+        actionBar = supportActionBar
+        actionBar?.hide()
 
 
         // toolbar
