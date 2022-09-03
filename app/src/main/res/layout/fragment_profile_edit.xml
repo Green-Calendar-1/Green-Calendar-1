@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".profileEditFragment">
+    <!-- 프로필 설정 창 그대로 활용할 수 있어서 이 프래그먼트 복사해서 액티비티로 만듦-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:text="닉네임"
             android:textSize="20sp" />
+
 
         <TextView
             android:id="@+id/userEmail"

@@ -9,8 +9,9 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greencalendar10.databinding.ActivityBoardBinding
 import com.example.greencalendar10.model.Post
+import com.example.greencalendar10.databinding.ActivityAddBinding
+import com.example.greencalendar10.databinding.ActivityBoardBinding
 import com.example.greencalendar10.recycler.PostAdapter
 import com.example.greencalendar10.util.myCheckPermission
 import com.google.firebase.firestore.Query
