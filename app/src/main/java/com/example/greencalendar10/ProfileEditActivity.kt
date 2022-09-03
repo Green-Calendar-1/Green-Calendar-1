@@ -1,42 +1,30 @@
 package com.example.greencalendar10
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.greencalendar10.databinding.ActivityProfileEditBinding
 import com.example.greencalendar10.databinding.ActivityProfileSettingBinding
-import com.example.greencalendar10.util.myCheckPermission
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QueryDocumentSnapshot
-import com.google.firebase.storage.StorageReference
-import io.grpc.InternalChannelz.id
 import java.io.File
-import java.util.*
 
-class ProfileSettingActivity : AppCompatActivity() {
-
-    lateinit var binding:ActivityProfileSettingBinding
+class ProfileEditActivity : AppCompatActivity() {
+    lateinit var binding: ActivityProfileEditBinding
     lateinit var filePath: String
-    lateinit var sharedPref:SharedPreferences
-    lateinit var file:Uri
+    lateinit var sharedPref: SharedPreferences
+    lateinit var file: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityProfileSettingBinding.inflate(layoutInflater)
+        binding= ActivityProfileEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // 갤러리 요청 런치
@@ -64,8 +52,9 @@ class ProfileSettingActivity : AppCompatActivity() {
 
         binding.profileIv.setOnClickListener{
             // 갤러리 앱의 목록으로 화면 전환
-            val intentToGallery = Intent(Intent.ACTION_PICK,
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            val intentToGallery = Intent(
+                Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             intentToGallery.type="image/*"
             requestLauncher.launch(intentToGallery)
         }
@@ -87,7 +76,7 @@ class ProfileSettingActivity : AppCompatActivity() {
         )
         // 서버에 저장
         MyApplication.db.collection("users")
-                // 유저 정보라 이메일 값으로 유저정보 저장
+            // 유저 정보라 이메일 값으로 유저정보 저장
             .document("${MyApplication.email}")
             .set(user)
             .addOnSuccessListener {
@@ -97,7 +86,7 @@ class ProfileSettingActivity : AppCompatActivity() {
 
                 // 닉네임, 한 줄 소개, 이미지 filePath 값을 sharedPreference로 핸드폰 내부에 저장함
                 // -> 글쓰기 창, 댓글창, 마이페이지에서 활용
-                sharedPref = getSharedPreferences("userPref",Context.MODE_PRIVATE)
+                sharedPref = getSharedPreferences("userPref", Context.MODE_PRIVATE)
                 sharedPref.edit().run{
                     putString("nickname",binding.nicknameEt.text.toString())
                     putString("introduction",binding.introductionEt.text.toString())
@@ -127,5 +116,4 @@ class ProfileSettingActivity : AppCompatActivity() {
                 Log.d("프로필 설정", "프로필 사진 저장 실패")
             }
     }
-
 }
