@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import com.example.greencalendar10.CategotyFeed.*
@@ -21,6 +22,9 @@ class CategoryFragment: Fragment() {
     ): View? {
         binding = FragmentCategoryBinding.inflate(inflater, container, false)
         return binding.root
+
+
+
     }
 
 
@@ -33,7 +37,17 @@ class CategoryFragment: Fragment() {
                 startActivity(intentToFeed1)
             }
         }
+
+        //게시물 쓰기 버튼 코드 추가
+        binding.contentaddBtn.setOnClickListener {
+            activity?.let{
+                var activityPost = Intent(context, BoardActivity::class.java)
+                startActivity(activityPost)
+            }
+        }
     }
+
+
 
 
 

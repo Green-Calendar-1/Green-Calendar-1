@@ -63,6 +63,7 @@
 
         <!--이미지 업로드하는 곳-->
         <ImageView
+            android:id="@+id/addImageView"
             android:src="@drawable/add_circle"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
@@ -70,7 +71,8 @@
 
 
         <!--게시물 추가 버튼-->
-        <Button
+        <!--일단 menu_add..xml 이용해서 게시물 추가할 수 있도록 해놔서 임시로 지우겠습니다..!-->
+        <!--<Button
             android:id="@+id/writeBtn"
             android:text="추가"
             android:textSize="18sp"
@@ -79,7 +81,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/black"/>-->
 
 
     </LinearLayout>

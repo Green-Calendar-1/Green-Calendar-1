@@ -15,7 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.greencalendar10.MyApplication.Companion.auth
-import com.example.greencalendar10.databinding.ActivityAddBinding
+import com.example.greencalendar10.databinding.ActivityBoardWriteBinding
 import com.example.greencalendar10.model.Post
 import com.example.greencalendar10.util.dateToString
 import com.google.firebase.auth.FirebaseAuth
@@ -29,15 +29,16 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 // 서버에 사진, 글 저장하는 페이지
+// ActivityBoardWrite로 바인딩 수정하겠습니다! (AddActivity = BoardWriteActivity 와 같음)
 class AddActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityAddBinding
+    lateinit var binding: ActivityBoardWriteBinding
     lateinit var filePath: String
     lateinit var sharedPref:SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityAddBinding.inflate(layoutInflater)
+        binding= ActivityBoardWriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         sharedPref = getSharedPreferences("userPref", Context.MODE_PRIVATE)
@@ -78,7 +79,7 @@ class AddActivity : AppCompatActivity() {
             )
             requestLauncher.launch(intent)
         }else if(item.itemId === R.id.menu_add_save){
-            if(binding.addImageView.drawable !== null && binding.addEditView.text.isNotEmpty()){
+            if(binding.addImageView.drawable !== null && binding.contentArea.text.isNotEmpty()){
                 //store 에 먼저 데이터를 저장후 document id 값으로 업로드 파일 이름 지정
                 saveStore()
             }else {
@@ -92,7 +93,7 @@ class AddActivity : AppCompatActivity() {
         //add............................
         val data = mapOf(
             "nickname" to sharedPref.getString("nickname","없음"),
-            "content" to binding.addEditView.text.toString(),
+            "content" to binding.contentArea.text.toString(),
             "date" to dateToString(Date()),
         )
         MyApplication.db.collection("posts")
