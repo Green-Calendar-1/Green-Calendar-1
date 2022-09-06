@@ -18,3 +18,6 @@ class BoardWriteFragment : Fragment() {
     }
 
 }
+
+
+//카테고리 프래그먼트랑 바인딩

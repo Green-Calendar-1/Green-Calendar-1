@@ -39,6 +39,11 @@ android {
     dataBinding{
         enabled = true
     }
+
+    //달력
+    buildFeatures{
+        dataBinding = true
+    }
 }
 apply plugin: 'com.google.gms.google-services'
 
