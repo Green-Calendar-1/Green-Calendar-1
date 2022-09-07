@@ -63,7 +63,9 @@ class ProfileEditActivity : AppCompatActivity() {
 
         binding.settingBtn.setOnClickListener {
             saveStore()
-            startActivity(intentToMainActivity)
+            // startActivity(intentToMainActivity)
+            // 종료 후 프로필 수정 전, 즉 마이페이지로 돌아가게 하고 싶어서 수정하였음
+            finish()
         }
 
     }
