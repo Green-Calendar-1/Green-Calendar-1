@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategotyFeed.Feed5Activity">
+    tools:context=".categoryfeed.Feed5Activity">
     <TextView
         android:text="카테고리 버튼5의 피드"
         android:textSize="40sp"

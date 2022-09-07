@@ -9,19 +9,27 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greencalendar10.BoardWriteActivity
+import com.example.greencalendar10.LoginActivity
+import com.example.greencalendar10.MyApplication
+import com.example.greencalendar10.R
+import com.example.greencalendar10.databinding.ActivityFeed1Binding
 import com.example.greencalendar10.model.Post
-import com.example.greencalendar10.databinding.ActivityAddBinding
-import com.example.greencalendar10.databinding.ActivityBoardBinding
 import com.example.greencalendar10.recycler.PostAdapter
 import com.example.greencalendar10.util.myCheckPermission
 import com.google.firebase.firestore.Query
-
-class BoardActivity : AppCompatActivity() {
-    lateinit var binding: ActivityBoardBinding
+// 9/5일 일지
+// Feed1 만들었는데 서버에 데이터가 안올라감
+// 댓글 기능도 수정해ㅑ야됨
+// 일단 세영님 디자인에 적용은 했슴
+// categoryfeed 폴더 삭제 -> 메니페스트에 적용안됨. 아마 이것 때문에 에러난듯
+// 내일 1교시임 ㅅ발 일찍 자럭마 ㅂㅇ
+class Feed1Activity : AppCompatActivity() {
+    lateinit var binding: ActivityFeed1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityBoardBinding.inflate(layoutInflater)
+        binding = ActivityFeed1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         myCheckPermission(this)
@@ -29,7 +37,7 @@ class BoardActivity : AppCompatActivity() {
             if(MyApplication.checkAuth()){
                 startActivity(Intent(this, BoardWriteActivity::class.java))
             }else {
-                Toast.makeText(this, "인증진행해주세요..",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "인증진행해주세요..", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -39,10 +47,10 @@ class BoardActivity : AppCompatActivity() {
         super.onStart()
         if(!MyApplication.checkAuth()){
             binding.logoutTextView.visibility= View.VISIBLE
-            binding.mainRecyclerView.visibility=View.GONE
+            binding.mainRecyclerView.visibility= View.GONE
         }else {
             binding.logoutTextView.visibility= View.GONE
-            binding.mainRecyclerView.visibility=View.VISIBLE
+            binding.mainRecyclerView.visibility= View.VISIBLE
             makeRecyclerView()
         }
     }
@@ -58,7 +66,7 @@ class BoardActivity : AppCompatActivity() {
     }
 
     private fun makeRecyclerView(){
-        MyApplication.db.collection("posts")
+        MyApplication.db.collection("feed1")
             .orderBy("date", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener {result ->

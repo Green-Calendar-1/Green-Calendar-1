@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategotyFeed.Feed2Activity">
+    tools:context=".categoryfeed.Feed2Activity">
 
     <TextView
         android:text="카테고리 버튼2의 피드"

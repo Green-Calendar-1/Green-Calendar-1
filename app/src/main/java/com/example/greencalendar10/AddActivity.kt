@@ -28,7 +28,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-// 서버에 사진, 글 저장하는 페이지
+// 서버에 사진, 글 저장하는 페이지 이제 없어도 되는 페이지 BoardWrite로 옮김
 class AddActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddBinding
