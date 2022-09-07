@@ -79,10 +79,10 @@ class MyDiaryFragment: Fragment(){
         val imgRef = storageRef.child("comments/${docId}.jpg")
 
         // 프로필 설정창에서는 갤러리에서 이미지를 선택해서 파일 경로를 구했는데 여기선 그럴 수가 없네...
-        // 1. intent로 넘겨주기... (x) -> 프로필 설정창이 처음 앱을 실행할 때만 실행되니까 두 번째 실행 시에는 null 값이라 안되네 시벌
+        // 1. intent로 넘겨주기... (x) -> 프로필 설정창이 처음 앱을 실행할 때만 실행되니까 두 번째 실행 시에는 null 값이라 안되네
         // 2. MyApplication에 전역 변수로 선언해서 사용하기... (x) -> 1과 같은 이유로 null값 이더라... 안됨
-        // 3. 서버에서 받기... (안해봄) -> 이론상 가능할지도..?
-        // 4. sharedPreference 사용하기 (o) -> 성공!@#짜ㅓㅏㅣ꺠ㅃ#ㅑ$ㅓㅒㅑ떠ㅏㅀㅇ호
+        // 3. 서버에서 받기... (안해봄)
+        // 4. sharedPreference 사용하기 (o) -> 성공
 
         // sharedPreference의 filePath (프로필 설정창에서 가져옴)
         val filePath = sharedPref.getString("filePath","")

@@ -20,17 +20,7 @@ class CommentListFragment: Fragment() {
     private var _binding: FragmentCommentListBinding? = null
     private val binding get() = _binding!!
 
-    // test
-   /* var commentList = arrayListOf<Comment>(
-        Comment("윤현조","안녕하세요","1시간 전", "profile_temp"),
-        Comment("박세영","안녕하세요","2시간 전", "profile_temp"),
-        Comment("안영준","안녕하세요","3시간 전", "profile_temp"),
-        Comment("김향은","안녕하세요","5분 전", "profile_temp"),
-        Comment("윤현조","안녕하세요","1시간 전", "profile_temp"),
-        Comment("박세영","안녕하세요","2시간 전", "profile_temp"),
-        Comment("안영준","안녕하세요","3시간 전", "profile_temp"),
-        Comment("김향은","안녕하세요","5분 전", "profile_temp")
-    )*/
+
     override fun onStart(){
         super.onStart()
         makeRecyclerView()

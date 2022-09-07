@@ -1,7 +1,9 @@
 package com.example.greencalendar10
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,9 +14,11 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.greencalendar10.databinding.FragmentMyPageBinding
 import com.example.greencalendar10.model.User
+import java.io.File
 
 class MyPageFragment: Fragment(R.layout.fragment_my_page) {
     lateinit var binding: FragmentMyPageBinding
+    lateinit var sharedPref:SharedPreferences
 
 
     override fun onCreateView(
@@ -29,18 +33,31 @@ class MyPageFragment: Fragment(R.layout.fragment_my_page) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imgRef = MyApplication.storage.reference.child("profiles/${MyApplication.email}.jpg")
+        /*val imgRef = MyApplication.storage.reference.child("profiles/${MyApplication.email}.jpg")
         imgRef.downloadUrl.addOnCompleteListener{ task ->
             if(task.isSuccessful){
                 Glide.with(this)
                     .load(task.result)
                     .into(binding.profileIv)
             }
-        }
+        }*/
 
 
         // 속도 향상을 위해 서버 말고 sharePreference로 바꾸자 너무 오래 걸린다.
-        MyApplication.db.collection("users")
+
+        sharedPref = requireActivity().getSharedPreferences("userPref", Context.MODE_PRIVATE)
+
+        binding.nicknameTv.text = sharedPref.getString("nickname","")
+        binding.introductionTv.text = sharedPref.getString("introduction","")
+        binding.emailTv.text = MyApplication.email
+
+        val filePath = sharedPref.getString("filePath","")
+
+        Glide.with(this)
+            .load(filePath)
+            .into(binding.profileIv)
+
+        /*MyApplication.db.collection("users")
             .document("${MyApplication.email}")
             .get()
             .addOnSuccessListener { document ->
@@ -51,13 +68,13 @@ class MyPageFragment: Fragment(R.layout.fragment_my_page) {
             }
             .addOnFailureListener{
                 Log.d("마이페이지","글 불러오기 실패")
-            }
+            }*/
 
 
         // 로그아웃 버튼 누를 경우
 
         val intentToLoginActivity = Intent(activity,LoginActivity::class.java)
-        val intentToProfileSettingActivity = Intent(activity,ProfileSettingActivity::class.java)
+        val intentToProfileEditActivity = Intent(activity,ProfileEditActivity::class.java)
         // 구글만 했는데 네이버도 해야됨.
         // 로그아웃 시 다시 로그인 창으로 전환 필요
         Log.d("마이페이지", "로그아웃 버튼 전")
@@ -73,12 +90,8 @@ class MyPageFragment: Fragment(R.layout.fragment_my_page) {
             startActivity(intentToLoginActivity)
         }
         binding.editBtn.setOnClickListener{
-            startActivity(intentToProfileSettingActivity)
+            startActivity(intentToProfileEditActivity)
         }
-
-
-
     }
-
 }
 

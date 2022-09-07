@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".profileEditFragment">
-    <!-- 프로필 설정 창 그대로 활용할 수 있어서 이 프래그먼트 복사해서 액티비티로 만듦-->
+    tools:context=".ProfileEditActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/profileIv"
@@ -23,30 +26,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/userNameTv"
+        <EditText
+            android:id="@+id/nicknameEt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="닉네임"
+            android:hint="닉네임"
             android:textSize="20sp" />
 
-
         <TextView
-            android:id="@+id/userEmail"
+            android:id="@+id/emailTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이메일"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/userMessage"
+        <EditText
+            android:id="@+id/introductionEt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="한 줄 소개"
+            android:hint="한 줄 소개"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/profileEditCompleteBtn"
+            android:id="@+id/settingBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="수정 완료" />
@@ -54,4 +56,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

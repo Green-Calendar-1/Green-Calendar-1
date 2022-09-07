@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!-- 이 페이지를 피드 창으로 사용-->
 
     <TextView
         android:id="@+id/logoutTextView"
