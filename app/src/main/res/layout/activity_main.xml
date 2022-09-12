@@ -52,6 +52,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="labeled"
+        app:itemIconTint="@drawable/main_toolbar_selector_color"
+        app:itemTextColor="@drawable/main_toolbar_selector_color"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intentToBoard = Intent(this,BoardActivity::class.java)
-
 
         // toolbar
         val toolbar: Toolbar = findViewById(R.id.main_toolbar)
@@ -38,12 +36,8 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.flFragment, homeFragment).commit()
                 }
                 R.id.categoryMenu -> {
-                    //val categoryFragment = CategoryFragment()
-                    //supportFragmentManager.beginTransaction().replace(R.id.flFragment, categoryFragment).commit()
-
-                    val boardFragment = BoardFragment()
-                    //supportFragmentManager.beginTransaction().replace(R.id.flFragment,boardFragment).commit()
-                    startActivity(intentToBoard)
+                    val categoryFragment = CategoryFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.flFragment, categoryFragment).commit()
                 }
                 R.id.myDiaryMenu -> {
                     val myDiaryFragment = MyDiaryFragment()
@@ -70,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+
     }
     fun changeFragment(index: Int){
         when(index){
