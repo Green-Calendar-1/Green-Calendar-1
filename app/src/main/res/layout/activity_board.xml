@@ -15,7 +15,7 @@
         android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mainRecyclerView"
+        android:id="@+id/boardRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>
@@ -31,5 +31,10 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="24dp"
         android:layout_marginRight="24dp"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/commentListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

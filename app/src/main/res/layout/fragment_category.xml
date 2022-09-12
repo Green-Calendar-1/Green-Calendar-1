@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,6 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
         <!-- <TextView
              android:layout_width="wrap_content"
@@ -25,8 +28,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="50dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <Button
+                android:id="@+id/BoardBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="게시판" />
+
 
             <!-- 툴바 여기에도 두면 중복돼서 지웠습니다 -->
 
@@ -98,7 +109,6 @@
                     android:layout_weight="1"
                     android:src="@drawable/add_circle" />
             </LinearLayout>
-
 
 
         </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.greencalendar10.recycler
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -23,7 +24,13 @@ class PostAdapter(val context: Context, val postList: MutableList<Post>): Recycl
     override fun getItemCount(): Int {
         return postList.size
     }
+
+
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+            itemClickListener.onClick(it, position)
+        }
+
         val data = postList.get(position)
 
         holder.binding.run {
@@ -42,5 +49,15 @@ class PostAdapter(val context: Context, val postList: MutableList<Post>): Recycl
             }
         }
     }
+
+    interface OnItemClickListener {
+        fun onClick(v: View, position: Int)
+    }
+    // (3) 외부에서 클릭 시 이벤트 설정
+    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
+    }
+    // (4) setItemClickListener로 설정한 함수 실행
+    private lateinit var itemClickListener : OnItemClickListener
 }
 

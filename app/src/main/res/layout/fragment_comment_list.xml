@@ -36,13 +36,15 @@
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="댓글을 입력하세요"/>
+                android:hint="댓글을 입력하세요"
+                android:id="@+id/commentInputEt"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="전송" />
+                android:text="전송"
+                android:id="@+id/commentInputBtn"/>
 
 
         </LinearLayout>

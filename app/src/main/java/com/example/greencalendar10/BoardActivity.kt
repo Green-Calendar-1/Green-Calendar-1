@@ -32,17 +32,20 @@ class BoardActivity : AppCompatActivity() {
                 Toast.makeText(this, "인증진행해주세요..",Toast.LENGTH_SHORT).show()
             }
         }
-
+        binding.boardRecyclerView.setOnClickListener {
+            val commentListFragment = CommentListFragment()
+            supportFragmentManager.beginTransaction().replace(R.id.flFragment, commentListFragment).commit()
+        }
     }
 
     override fun onStart() {
         super.onStart()
         if(!MyApplication.checkAuth()){
             binding.logoutTextView.visibility= View.VISIBLE
-            binding.mainRecyclerView.visibility=View.GONE
+            binding.boardRecyclerView.visibility=View.GONE
         }else {
             binding.logoutTextView.visibility= View.GONE
-            binding.mainRecyclerView.visibility=View.VISIBLE
+            binding.boardRecyclerView.visibility=View.VISIBLE
             makeRecyclerView()
         }
     }
@@ -68,8 +71,8 @@ class BoardActivity : AppCompatActivity() {
                     item.docId=document.id
                     itemList.add(item)
                 }
-                binding.mainRecyclerView.layoutManager = LinearLayoutManager(this)
-                binding.mainRecyclerView.adapter = PostAdapter(this,itemList)
+                binding.boardRecyclerView.layoutManager = LinearLayoutManager(this)
+                binding.boardRecyclerView.adapter = PostAdapter(this,itemList)
             }
             .addOnFailureListener{exception ->
                 Log.d("보드액티비티", "서버 데이터 획득 실패", exception)

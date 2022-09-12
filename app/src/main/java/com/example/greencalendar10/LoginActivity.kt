@@ -1,6 +1,8 @@
 package com.example.greencalendar10
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,13 +17,17 @@ import com.google.firebase.auth.GoogleAuthProvider
 class LoginActivity : AppCompatActivity() {
     // 변수 모음
     lateinit var binding: ActivityLoginBinding
+    lateinit var sharedPref: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*if(MyApplication.checkAuth()){
-            var intent = Intent(this, ProfileSettingActivity::class.java)
+        sharedPref = getSharedPreferences("userPref",Context.MODE_PRIVATE)
+
+        // 로그인 한적 있다? 바로 패스
+        if(MyApplication.checkAuth()){
+            startActivity(Intent(this,MainActivity::class.java))
             Log.d("로그인 성공","로그인 성공")
         }else {
             Toast.makeText(
@@ -29,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 "로그인 실패",
                 Toast.LENGTH_SHORT
             ).show()
-        }*/
+        }
 
         // -------------구글 인증 시작 부분----------------
         var requestLauncher = registerForActivityResult(
@@ -75,10 +81,6 @@ class LoginActivity : AppCompatActivity() {
                 ).show()
             }
         }
-        binding.feedBtn.setOnClickListener {
-            val intentToFeed = Intent(this,Feed1Activity::class.java)
-            startActivity(intentToFeed)
-        }
 
         // -----------------구글 로그인 버튼 누를 때-----------------------
         binding.googleLoginBtn.setOnClickListener {
@@ -99,7 +101,13 @@ class LoginActivity : AppCompatActivity() {
             // 인텐트 시작
             requestLauncher.launch(signInIntent)
             val intentToMain = Intent(this,MainActivity::class.java)
-            startActivity(intentToMain)
+            val intentToProfileSetting = Intent(this,ProfileSettingActivity::class.java)
+
+            if (sharedPref.getString("nickname","") == ""){
+                startActivity(intentToProfileSetting)
+            }else {
+                startActivity(intentToMain)
+            }
         }
 
         // 메인 화면 연결

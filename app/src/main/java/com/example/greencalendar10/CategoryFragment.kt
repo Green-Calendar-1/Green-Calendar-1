@@ -20,21 +20,14 @@ class CategoryFragment: Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.categoryBtn1.setOnClickListener{
-            activity?.let {
-                val intentToFeed1 = Intent(context, Feed1Activity::class.java)
-                startActivity(intentToFeed1)
-            }
+        binding.BoardBtn.setOnClickListener {
+            val intentToBoard = Intent(context,BoardActivity::class.java)
+            startActivity(intentToBoard)
         }
     }
-
-
-
-
 }
 
 
