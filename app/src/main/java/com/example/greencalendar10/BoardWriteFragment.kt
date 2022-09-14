@@ -12,12 +12,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.Toast.makeText
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.greencalendar10.R
-import com.example.greencalendar10.databinding.ActivityBoardBinding.inflate
 import com.example.greencalendar10.databinding.ActivityBoardWriteBinding
 import com.example.greencalendar10.util.dateToString
 import java.io.File

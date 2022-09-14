@@ -17,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenCalendar10"
         tools:targetApi="31">
-
+        <activity
+            android:name=".CalendarBoard"
+            android:exported="false" />
+        <activity
+            android:name=".MyDiaryActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -63,7 +68,7 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

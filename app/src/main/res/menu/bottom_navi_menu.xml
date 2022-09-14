@@ -8,7 +8,7 @@
         android:enabled="true"/>
     <item
         android:id="@+id/categoryMenu"
-        android:title="카테고리"
+        android:title="환경 일기"
         android:icon="@drawable/category_ic" />
     <item
         android:id="@+id/myDiaryMenu"

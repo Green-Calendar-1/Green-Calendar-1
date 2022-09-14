@@ -14,19 +14,19 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.greencalendar10.MyApplication.Companion.auth
 import com.example.greencalendar10.databinding.ActivityAddBinding
-import com.example.greencalendar10.model.Post
 import com.example.greencalendar10.util.dateToString
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import io.grpc.InternalChannelz.id
 import java.io.File
-import java.text.SimpleDateFormat
 import java.util.*
+
+
+// 할일
+// 필요없는 코드들 삭제 해버리자!
+// 필요없는 기능 찾아 없애버리자!
+// 댓글 버리자!
+// 테스트 해보자!
+// 사진 찍어야 된다!
+//
 
 // 서버에 사진, 글 저장하는 페이지 이제 없어도 되는 페이지 BoardWrite로 옮김
 class AddActivity : AppCompatActivity() {

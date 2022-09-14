@@ -7,15 +7,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.greencalendar10.databinding.ActivityAddBinding
-import com.example.greencalendar10.databinding.ActivityBoardBinding
 import com.example.greencalendar10.databinding.ActivityBoardWriteBinding
 import com.example.greencalendar10.util.dateToString
 import java.io.File

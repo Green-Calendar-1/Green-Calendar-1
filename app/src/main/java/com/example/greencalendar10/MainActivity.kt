@@ -36,12 +36,17 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.flFragment, homeFragment).commit()
                 }
                 R.id.categoryMenu -> {
-                    val categoryFragment = CategoryFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.flFragment, categoryFragment).commit()
+                    //val categoryFragment = CategoryFragment()
+                    //supportFragmentManager.beginTransaction().replace(R.id.flFragment, categoryFragment).commit()
+                    val intentToBoard = Intent(this@MainActivity,BoardActivity::class.java)
+                    startActivity(intentToBoard)
+
                 }
                 R.id.myDiaryMenu -> {
-                    val myDiaryFragment = MyDiaryFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.flFragment, myDiaryFragment).commit()
+                    //val myDiaryFragment = MyDiaryFragment()
+                    //supportFragmentManager.beginTransaction().replace(R.id.flFragment, myDiaryFragment).commit()
+                    val intentToMyDiary = Intent(this@MainActivity,MyDiaryActivity::class.java)
+                    startActivity(intentToMyDiary)
                 }
                 R.id.myPageMenu -> {
                     val myPageFragment = MyPageFragment()

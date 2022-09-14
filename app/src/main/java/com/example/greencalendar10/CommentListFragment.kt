@@ -11,10 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.greencalendar10.databinding.FragmentCommentListBinding
-import com.example.greencalendar10.databinding.FragmentMyDiaryBinding
-import com.example.greencalendar10.databinding.FragmentMyPageBinding
 import com.example.greencalendar10.model.Comment
 import com.example.greencalendar10.recycler.CommentListAdapter
 import com.example.greencalendar10.util.dateToString

@@ -1,19 +1,17 @@
 package com.example.greencalendar10
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.greencalendar10.databinding.FragmentHomeBinding
-import com.example.greencalendar10.databinding.FragmentMyDiaryBinding
-import com.navercorp.nid.NaverIdLoginSDK.applicationContext
+import com.example.greencalendar10.util.dateToString
 import java.time.LocalDate
-import java.time.YearMonth
-import java.time.format.DateTimeFormatter
+import java.util.*
+import kotlin.reflect.typeOf
 
 class HomeFragment: Fragment(R.layout.fragment_home) {
 
@@ -32,7 +30,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-        //binding초기화
+        /*//binding초기화
         //binding = DataBindingUtil.setContentView(this, R.layout.fragment_home) <?
 
         //현재날짜
@@ -51,12 +49,28 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         binding.nextBtn.setOnClickListener {
             selectedDate = selectedDate.plusMonths(1)
             setMonthView()
-         }
+         }*/
 
         return binding.root
     }
 
-    //**날짜 화면에 보여주기
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.calendarView.setOnDateChangedListener { widget, date, selected ->
+
+            var dateType: Date = date.date
+            dateToString(dateType)
+            Toast.makeText(activity, "${dateToString(dateType).slice(IntRange(0,6))}", Toast.LENGTH_SHORT
+            ).show()
+
+            val intentToCalendarBoard = Intent(requireActivity(),CalendarBoard::class.java)
+            intentToCalendarBoard.putExtra("calendarDate",dateToString(dateType))
+            startActivity(intentToCalendarBoard)
+        }
+    }
+
+    /*//날짜 화면에 보여주기
     private fun setMonthView(){
         //년월 텍스트뷰 실행
         binding.monthYearText.text = monthYearFromDate(selectedDate)
@@ -65,7 +79,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         val dayList = dayInMonthArray(selectedDate)
 
 
-/*        //어뎁터 초기화
+      //어뎁터 초기화
         val adapter = CalendarAdapter(dayList)
 
         //레이아웃 설정 ( 열 7개)
@@ -76,7 +90,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
 
         //어뎁터 적용
-        binding.recyclerView.adapter = adapter*/
+        binding.recyclerView.adapter = adapter
 
     }
 
@@ -86,7 +100,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         var formatter = DateTimeFormatter.ofPattern("YYYY M월")
             return date.format(formatter)
     }
-    //**날짜 생성
+    //날짜 생성
     private fun dayInMonthArray(date: LocalDate): ArrayList<String> {
 
         var dayList = ArrayList<String>()
@@ -112,7 +126,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
         return dayList
 
-    }
+    }*/
 
 
 }
