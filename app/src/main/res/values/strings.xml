@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Green Calendar 1.0</string>
-
+    <string name="app_name">그린 캘린더</string>
     <string name="social_login_info_naver_client_id">cTXE35nNCc8cfD9xbeA5</string>
     <string name="social_login_info_naver_client_secret">J0VAXaviVS</string>
     <string name="social_login_info_naver_client_name">Green Calendar</string>

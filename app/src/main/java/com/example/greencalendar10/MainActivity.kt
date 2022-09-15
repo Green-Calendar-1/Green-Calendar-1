@@ -18,15 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         // toolbar
         val toolbar: Toolbar = findViewById(R.id.main_toolbar)
         toolbar.inflateMenu(R.menu.main_toolbar_menu)
-
         // 하단 바 바인딩
         val bnv_main = findViewById(R.id.bottomNavigationView) as BottomNavigationView
-
 
         bnv_main.run { setOnItemSelectedListener {
             when(it.itemId) {
@@ -57,20 +53,6 @@ class MainActivity : AppCompatActivity() {
         }
             selectedItemId = R.id.homeFragment
         }
-
-
-        // toolbar 알림창 -> icon 임시
-        toolbar.setOnMenuItemClickListener{
-            when(it.itemId) {
-                R.id.action_notification -> {
-                    val intentToNotification = Intent(this, NotificationList::class.java)
-                    startActivity(intentToNotification)
-                }
-            }
-            true
-        }
-
-
     }
     fun changeFragment(index: Int){
         when(index){
@@ -81,5 +63,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }
